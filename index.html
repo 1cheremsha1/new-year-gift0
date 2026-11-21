@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>С Новым Годом!</title>
+    <!-- Подключаем красивые шрифты -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Анимация падающего снега на фоне -->
+    <div class="snow-container" id="snow"></div>
+
+    <!-- ГЛАВНАЯ СТРАНИЦА -->
+    <main id="home-view" class="view active">
+        <div class="container">
+            
+            <!-- Блок "Все фото" (случайное фото по клику или свайпу) -->
+            <div class="random-photo-box" id="random-photo-box" title="Нажми, чтобы сменить фото">
+                <img id="random-photo" src="asset/1.jpg" alt="Наши воспоминания">
+                <div class="photo-hint">Нажми или смахни</div>
+            </div>
+
+            <!-- Заголовок и подзаголовок -->
+            <header class="hero-text">
+                <h1>С НОВЫМ ГОДОМ ЛЮБИМАЯ</h1>
+                <p class="subtitle">✦ Воспоминания с этого года ✦</p>
+            </header>
+
+            <!-- Кнопка перехода в Альбом -->
+            <button id="open-album-btn" class="btn-primary">АЛЬБОМ</button>
+
+            <!-- Интерактивное сердечко -->
+            <div class="heart-wrapper">
+                <button id="heart-btn" class="heart-btn" aria-label="Открыть поздравление">
+                    <svg viewBox="0 0 24 24" class="heart-svg">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                    <span class="heart-label">Нажми на меня</span>
+                </button>
+            </div>
+
+            <!-- Выпадающий текст поздравления -->
+            <div id="greeting-box" class="greeting-box">
+                <div class="letter-card">
+                    <h3>С Новым годом!</h3>
+                    <!-- ВСТАВЬ СВОЙ ТЕКСТ НИЖЕ -->
+                    <p>
+                        Этот год был особенным благодаря тебе. Спасибо за каждый момент, 
+                        улыбку и тепло, которые ты даришь. Пусть в новом году у нас будет 
+                        ещё больше счастливых дней, путешествий и поводов для радости!
+                    </p>
+                    <p class="signature">С любовью, твой...</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- СТРАНИЦА "АЛЬБОМ ФОТОГРАФИЙ" -->
+    <section id="album-view" class="view">
+        <div class="container album-container">
+            <div class="album-header">
+                <button id="back-home-btn" class="btn-back">← Назад</button>
+                <h2>Альбом фотографий</h2>
+            </div>
+
+            <!-- Сетка из 46 фотографий (заполняется через JS) -->
+            <div id="gallery-grid" class="gallery-grid"></div>
+        </div>
+    </section>
+
+    <!-- ПОЛНОЭКРАННЫЙ ПРОСМОТР ФОТО (ЛАЙТБОКС) -->
+    <div id="lightbox" class="lightbox">
+        <button id="close-lightbox" class="lightbox-close">&times;</button>
+        <button id="prev-photo" class="lightbox-nav prev">&#10094;</button>
+        <img id="lightbox-img" src="" alt="Просмотр фото">
+        <button id="next-photo" class="lightbox-nav next">&#10095;</button>
+        <div id="lightbox-counter" class="lightbox-counter">1 / 46</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
